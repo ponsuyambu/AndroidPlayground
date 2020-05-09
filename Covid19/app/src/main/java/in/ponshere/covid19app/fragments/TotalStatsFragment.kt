@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import kotlinx.android.synthetic.main.total_stats_fragment.*
 
 class TotalStatsFragment : Fragment() {
     private val viewModel: TotalStatsViewModel by viewModels()
@@ -33,6 +34,9 @@ class TotalStatsFragment : Fragment() {
         viewModel.generalStats().observe(this,
             Observer<GeneralStatsResponse> {
                 it?.let {
+                    tvOverallCases.text = it.data.totalCases
+                    val lastUpdatedTime = "Last updated: ${it.data.lastUpdatedTime}"
+                    tvLastUpdated.text = lastUpdatedTime
                     Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT).show()
                 }
             })
