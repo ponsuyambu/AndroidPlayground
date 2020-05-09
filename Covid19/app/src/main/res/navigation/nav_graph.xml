@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tab1">
+    <fragment
+        android:id="@+id/tab1"
+        android:name="in.ponshere.covid19app.fragments.MapFragment"
+        android:label="@string/total_stats"
+        tools:layout="@layout/total_stats_fragment" />
+
+    <fragment
+        android:id="@+id/tab2"
+        android:name="in.ponshere.covid19app.fragments.RegionStatsFragment"
+        android:label="@string/region_stats"
+        tools:layout="@layout/region_stats_fragment" />
+
+    <fragment
+        android:id="@+id/tab3"
+        android:name="in.ponshere.covid19app.fragments.MapFragment"
+        android:label="@string/covid_map" />
+</navigation>
