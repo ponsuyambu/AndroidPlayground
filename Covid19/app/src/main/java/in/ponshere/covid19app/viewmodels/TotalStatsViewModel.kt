@@ -16,7 +16,7 @@ class TotalStatsViewModel : ViewModel() {
 
     fun fetchGeneralStats() {
         viewModelScope.launch(IO) {
-            val result = RetrofitService.getGeneralStatsService().getGeneralStats().execute()
+            val result = RetrofitService.getGeneralStatsService().getGeneralStats()
             generalStats.postValue(result.body())
             Log.d("Network", result.body().toString())
         }
