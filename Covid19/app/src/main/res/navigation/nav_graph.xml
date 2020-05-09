@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/tab1">
+    app:startDestination="@id/total_stats">
     <fragment
-        android:id="@+id/tab1"
-        android:name="in.ponshere.covid19app.fragments.MapFragment"
+        android:id="@+id/total_stats"
+        android:name="in.ponshere.covid19app.fragments.TotalStatsFragment"
         android:label="@string/total_stats"
         tools:layout="@layout/total_stats_fragment" />
 
     <fragment
-        android:id="@+id/tab2"
+        android:id="@+id/region_stats"
         android:name="in.ponshere.covid19app.fragments.RegionStatsFragment"
         android:label="@string/region_stats"
         tools:layout="@layout/region_stats_fragment" />
 
     <fragment
-        android:id="@+id/tab3"
+        android:id="@+id/covid_map"
         android:name="in.ponshere.covid19app.fragments.MapFragment"
         android:label="@string/covid_map" />
 </navigation>

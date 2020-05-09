@@ -13,6 +13,6 @@ class RegionStatsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.total_stats_fragment, container, false)
+        return inflater.inflate(R.layout.region_stats_fragment, container, false)
     }
 }
