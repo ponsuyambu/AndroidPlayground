@@ -4,7 +4,7 @@ The objective of this project is to learn coroutines in Kotlin and deep dive int
 # Setup
 Import the project in IntelliJ IDEA via gradle import.
 
-#Coroutines
+# Coroutines
 Coroutines are light-weight threads. They are launched with coroutine builder in a context of some CoroutineScope
 
 ## Key concepts
