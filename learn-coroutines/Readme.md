@@ -11,6 +11,14 @@ Coroutines are light-weight threads. They are launched with coroutine builder in
 - Coroutine builder
 - Coroutine Scope
 
+Example
+```kotlin
+    GlobalScope.launch { // GlobalScope -> scope;  launch -> Builder
+        delay(1000L)
+        println("World!")
+    }
+```
+
 ### Builders
 - launch - launch a new coroutine in background
 - runBlocking - blocks the main thread
