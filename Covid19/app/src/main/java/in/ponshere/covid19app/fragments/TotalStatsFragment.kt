@@ -78,6 +78,12 @@ class TotalStatsFragment : Fragment() {
                     }
                 }
             })
+        viewModel.showLoading().observe(this, Observer {
+            if (it) {
+                progressBar.visibility = View.VISIBLE
+            } else
+                progressBar.visibility = View.GONE
+        })
     }
 
 }
