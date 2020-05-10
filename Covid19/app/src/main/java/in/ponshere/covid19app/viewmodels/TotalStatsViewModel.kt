@@ -15,7 +15,7 @@ class TotalStatsViewModel : ViewModel() {
     private val generalStats = MutableLiveData<GeneralStatsResponse>()
 
     fun fetchGeneralStats() {
-        viewModelScope.launch(IO) {
+        viewModelScope.launch {
             val result = RetrofitService.getGeneralStatsService().getGeneralStats()
             generalStats.postValue(result.body())
             Log.d("Network", result.body().toString())
