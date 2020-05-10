@@ -1,30 +1,28 @@
 package `in`.ponshere.covid19app.viewmodels
 
 import `in`.ponshere.covid19app.network.ServiceHelper
-import `in`.ponshere.covid19app.network.responses.GeneralStatsResponse
-import android.util.Log
+import `in`.ponshere.covid19app.network.responses.CountriesStatsResponse
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
-class TotalStatsViewModel : ViewModel() {
+class RegionStatsViewModel : ViewModel() {
 
-    private val generalStats = MutableLiveData<GeneralStatsResponse>()
+    private val countryStats = MutableLiveData<CountriesStatsResponse>()
     private val showLoading = MutableLiveData<Boolean>()
 
     fun fetchGeneralStats() {
         viewModelScope.launch {
             showLoading.postValue(true)
-            val result = ServiceHelper.getGeneralStatsService().getGeneralStats()
-            generalStats.postValue(result.body())
+            val result = ServiceHelper.getGeneralStatsService().getCountryStats()
+            countryStats.postValue(result.body())
             showLoading.postValue(false)
-            Log.d("Network", result.body().toString())
         }
     }
 
-    fun generalStats(): LiveData<GeneralStatsResponse> = generalStats
+    fun countryStats(): LiveData<CountriesStatsResponse> = countryStats
 
     fun showLoading(): LiveData<Boolean> = showLoading
 }

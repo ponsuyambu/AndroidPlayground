@@ -85,5 +85,4 @@ class TotalStatsFragment : Fragment() {
                 progressBar.visibility = View.GONE
         })
     }
-
 }

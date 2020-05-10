@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 
-object RetrofitService {
+object ServiceHelper {
     private val retrofit: Retrofit
 
     init {
@@ -31,6 +31,4 @@ object RetrofitService {
     fun getGeneralStatsService(): Covid19TrackerService {
         return retrofit.create(Covid19TrackerService::class.java)
     }
-
-
 }
